@@ -32,11 +32,26 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+
+		<!-- 增加JPA的依赖 -->
+		<!--增加Spring的JPA依赖-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!--增加mysql连接依赖-->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!--需要导入下列依赖，才能使用@Entity注解，@Id注解 -->
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0.2</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -63,5 +78,25 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<!-- 增加阿里源，可以加速相关依赖的下载 -->
+	<repositories>
+		<repository>
+			<id>aliyun-repos</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>aliyun-plugin</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
 
 </project>
