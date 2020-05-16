@@ -1,33 +1,30 @@
 package com.example.christina.enity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+
 /*
 * 商品的实体类，分别有商品的图片属性，名称属性，价格属性。
 * 更多的属性以后再慢慢添加。
  */
+@Entity
+@Getter
+@Setter
 public class Goods {
-    private String cover;       //商品图片，用cover表示
-    private String goodName;    //商品名称
-    private double price;       //商品价格
+    //设置ID作为自增主键
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //标识id可以被初始化
+    private Integer id;
 
-    //定义set方法
-    public void setCover(String cover){
-        this.cover = cover;
-    }
-    public void setGoodName(String goodName){
-        this.goodName = goodName;
-    }
-    public void setPrice(double price){
-        this.price = price;
-    }
+    @Column(name = "cover", nullable = true, length = 20)     //商品图片，用cover表示
+    private String cover;
 
-    //定义get方法
-    public String getCover(){
-        return cover;
-    }
-    public String getGoodName(){
-        return goodName;
-    }
-    public double getPrice(){
-        return price;
-    }
+    @Column(name = "goodname", nullable = true, length = 20)  //商品名称
+    private String goodname;
+
+    @Column(name = "price")     //商品价格
+    private float price;
+
 }
