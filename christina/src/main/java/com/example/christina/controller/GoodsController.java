@@ -3,8 +3,6 @@ package com.example.christina.controller;
 import com.example.christina.Repository.GoodsRepository;
 import com.example.christina.enity.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

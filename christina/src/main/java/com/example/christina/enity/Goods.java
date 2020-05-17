@@ -18,10 +18,11 @@ public class Goods {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //标识id可以被初始化
     private Integer id;
 
-    @Column(name = "cover", nullable = true, length = 20)     //商品图片，用cover表示
+    //考虑到商品图片存储的字符串可能很长，暂时不限制长度了，名称也是同理
+    @Column(name = "cover", nullable = true /*length = 20*/)     //商品图片，用cover表示
     private String cover;
 
-    @Column(name = "goodname", nullable = true, length = 20)  //商品名称
+    @Column(name = "goodname", nullable = true /*length = 20*/)  //商品名称
     private String goodname;
 
     @Column(name = "price")     //商品价格
