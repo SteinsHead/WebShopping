@@ -26,6 +26,6 @@ public class Goods {
     private String goodname;
 
     @Column(name = "price")     //商品价格
-    private float price;
+    private double price;
 
 }
