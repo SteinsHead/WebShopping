@@ -26,6 +26,6 @@ public class Goods {
     private String goodname;
 
     @Column(name = "price")     //商品价格
-    private float price;
+    private double price;//float型在大数上有一些问题，于是改成了double型
 
 }
