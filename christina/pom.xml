@@ -73,7 +73,7 @@
 		</plugins>
 	</build>
 
-	<!-- 增加阿里源，可以加速相关依赖的下载 -->
+<!--	 增加阿里源，可以加速相关依赖的下载 -->
 	<repositories>
 		<repository>
 			<id>aliyun-repos</id>
