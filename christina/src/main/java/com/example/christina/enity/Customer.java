@@ -5,9 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.text.Format;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static com.example.christina.enity.idCard.validateAllCard;
 
 /*
 * 顾客的实体类，目前的属性是用户名和密码
@@ -35,19 +36,15 @@ public class Customer {
     private String telephone;  //用户手机号码
 
     @Column(name = "Email", nullable = false)
-    private String Email;
+    private String Email;//邮箱
+
+    @Column(name = "RecAddress", nullable = false)
+    private String Address;//收货地址
+
+    @Column(name = "IDNum", nullable = false)
+    private String IDNum;
 
 
-
-    public String getTelepphone(){
-        //查询手机号码
-        return telephone;
-    }
-
-    public String getEmail(){
-        //查询用户邮箱
-        return Email;
-    }
 
     public boolean IfDigit(String str){
         //判断某字符串是否为纯数字
@@ -90,6 +87,15 @@ public class Customer {
         }
         else{
             System.out.println("邮箱格式有误！");
+        }
+    }
+
+    public void setIDNum(String IDNum){
+        if(validateAllCard(IDNum)){
+            this.IDNum = IDNum;
+        }
+        else{
+            System.out.println("您的身份证格式有误！");
         }
     }
 
