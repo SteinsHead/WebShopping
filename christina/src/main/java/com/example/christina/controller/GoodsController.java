@@ -14,18 +14,28 @@ public class GoodsController {
     @Autowired
     private GoodsRepository goodsRepository;
 
+    /*
+    * 添加商品
+     */
     @PostMapping(path = "addGoods")
     public void addGoods(@RequestBody Goods goods){
         goodsRepository.save(goods);
     }
 
+    /*
+    * 删除商品
+     */
     @DeleteMapping(path = "deleteGoods")
     public void deleteGoods(@RequestBody Goods goods){
         goodsRepository.delete(goods);
     }
 
+    /*
+    * 根据商品名称来查询商品
+    * 查询结果使用List来列出
+     */
     @GetMapping(path = "getGoods")
-    public List<Goods> getGoods(String goodname){
+    public List<Goods> getGoods(@RequestParam String goodname){
         return goodsRepository.findBygoodname(goodname);
     }
 }

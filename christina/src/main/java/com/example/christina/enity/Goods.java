@@ -8,6 +8,7 @@ import javax.persistence.*;
 /*
 * 商品的实体类，分别有商品的图片属性，名称属性，价格属性。
 * 更多的属性以后再慢慢添加。
+* 使用@Getter注解和@Setter注解的原因是我懒，别骂了别骂了呜呜呜
  */
 @Entity
 @Getter
@@ -27,6 +28,10 @@ public class Goods {
 
     @Column(name = "price")     //商品价格
     private double price;//float型在大数上有一些问题，于是改成了double型
+
+    //库存属性
+    @Column(name = "stocknumber", nullable = false)
+    private Integer stocknumber;
 
 
 }

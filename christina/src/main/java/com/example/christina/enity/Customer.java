@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.example.christina.enity.idCard.validateAllCard;
+import static com.example.christina.tools.idCard.validateAllCard;
 
 /*
 * 顾客的实体类，目前的属性是用户名和密码

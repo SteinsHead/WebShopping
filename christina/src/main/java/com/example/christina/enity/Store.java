@@ -25,4 +25,5 @@ public class Store {
     private String storepassword;   //商家密码
 
 
+
 }
