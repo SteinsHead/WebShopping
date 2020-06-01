@@ -10,5 +10,5 @@ import java.util.List;
 * 剩下的功能都可以添加
  */
 public interface GoodsRepository extends JpaRepository<Goods, Integer> {
-    List<Goods> findBygoodname(String goodname);
+    List<?> findBygoodname(String goodname);
 }

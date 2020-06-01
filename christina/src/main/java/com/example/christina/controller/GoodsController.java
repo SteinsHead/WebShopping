@@ -35,7 +35,8 @@ public class GoodsController {
     * 查询结果使用List来列出
      */
     @GetMapping(path = "getGoods")
-    public List<Goods> getGoods(@RequestParam String goodname){
+    public List<?> getGoods(@RequestParam String goodname){
         return goodsRepository.findBygoodname(goodname);
     }
+    //这里使用List<?>这样一种泛型的列表，来接收从接口传来的数据
 }

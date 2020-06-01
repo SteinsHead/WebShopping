@@ -25,7 +25,7 @@ public class StoreController {
     }
 
     @GetMapping(path = "getStore")
-    public List<Store> getStores(@RequestParam String storename){
+    public List<?> getStores(@RequestParam String storename){
         return storeRepository.findBystorename(storename);
     }
 }

@@ -2,7 +2,6 @@ package com.example.christina.service;
 
 import com.example.christina.controller.GoodsController;
 import com.example.christina.controller.StoreController;
-import com.example.christina.enity.Store;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,5 +29,10 @@ public class SearchService {
     public List<?> SearchStore(String storename) {
         return storeController.getStores(storename);
     }
+
+    /*
+    * 总的查询操作
+     */
+    
 
 }
