@@ -5,6 +5,8 @@ import com.example.christina.enity.Administrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "admin")
 public class AdminController {
@@ -22,8 +24,13 @@ public class AdminController {
         adminRepository.delete(administrator);
     }
 
+    @GetMapping(path = "getAllAdmins")
+    public List<?> getAllAdmin(){
+        return adminRepository.findAll();
+    }
+
     @GetMapping(path = "getAdmin")
-    public Administrator getAdmin(String adminname){
+    public List<?> getAdmin(String adminname){
         return adminRepository.findByadminname(adminname);
     }
 }

@@ -30,6 +30,11 @@ public class GoodsController {
         goodsRepository.delete(goods);
     }
 
+    @GetMapping(path = "getAllGoods")
+    public List<?> getAllGoods(){
+        return goodsRepository.findAll();
+    }
+
     /*
     * 根据商品名称来查询商品
     * 查询结果使用List来列出

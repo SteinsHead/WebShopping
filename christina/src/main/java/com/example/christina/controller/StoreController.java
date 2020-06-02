@@ -24,6 +24,11 @@ public class StoreController {
         storeRepository.delete(store);
     }
 
+    @GetMapping(path = "getAllStores")
+    public List<?> getAllStores(){
+        return storeRepository.findAll();
+    }
+
     @GetMapping(path = "getStore")
     public List<?> getStores(@RequestParam String storename){
         return storeRepository.findBystorename(storename);
