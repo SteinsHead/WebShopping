@@ -31,3 +31,44 @@ This is a repository of my class homework.
 > 更多的想法请自行添加，这样有利于集合思想。
 + 首先用来接收数据的类型使用List<?>来接收数据，这样一个泛型的接收有利于数据的处理
 ***
+
+***
+### 我们的项目中所引入的JPA的语法规则（编写接口时的语法规范）
+#### 后面的可能用不到，但是可以作为参考
+| KeyWord | Sample | JPQLsnippet |
+| :---------------: | :-----------------------------: | :-----------------------: |
+| And | findByLastnameAndFirstname | … where x.lastname = ?1 and x.firstname = ?2 |
+| Or | findByLastnameOrFirstname | 	
+… where x.lastname = ?1 or x.firstname = ?2 |
+| Is,Equals | findByFirstname,findByFirstnameIs,findByFirstnameEquals | … where x.firstname = ?1 |
+| Between | findByStartDateBetween | 	
+… where x.startDate between ?1 and ?2 |
+| LessThan | findByAgeLessThan | … where x.age < ?1 |
+| LessThanEqual | findByAgeLessThanEqual | … where x.age ⇐ ?1 |
+| GreaterThan | findByAgeGreaterThan | … where x.age > ?1 |
+| GreaterThanEqual | findByAgeGreaterThanEqual | 	
+… where x.age >= ?1 |
+| After | findByStartDateAfter | 	
+… where x.startDate > ?1 |
+| Before | findByStartDateBefore | … where x.startDate < ?1 |
+| IsNull | findByAgeIsNull | 	
+… where x.age is null |
+| IsNotNull,NotNull | findByAge(Is)NotNull | … where x.age not null |
+| Like | findByFirstnameLike | … where x.firstname like ?1 |
+| NotLike | findByFirstnameNotLike | 	
+… where x.firstname not like ?1 |
+| StartingWith | findByFirstnameStartingWith | … where x.firstname like ?1(parameter bound with appended %) |
+| EndingWith | findByFirstnameEndingWith | … where x.firstname like ?1(parameter bound with prepended %) |
+| Containing | findByFirstnameContaining | … where x.firstname like ?1(parameter bound wrapped in%) |
+| OrderBy | findByAgeOrderByLastnameDesc | … where x.age = ?1 order by x.lastname desc |
+| Not | findByLastnameNot | 	
+… where x.lastname <> ?1 |
+| In | 	
+findByAgeIn(Collection<Age> ages) | … where x.age in ?1 |
+| NotIn | 	
+findByAgeNotIn(Collection<Age> age) | … where x.age not in ?1 |
+| True | findByActiveTrue() | … where x.active = true |
+| False | findByActiveFalse() | … where x.active = false |
+| IgnoreCase | findByFirstnameIgnoreCase | … where UPPER(x.firstame) = UPPER(?1) |
+
+***
